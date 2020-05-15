@@ -1,7 +1,21 @@
 package smarterp
 
-class UserRole {
+class UserRole  {
 
-    static constraints = {
+    User user
+    Role role
+
+    static belongsTo = [User]
+
+
+    static mapping = {
+		id generator: "increment"
+		version false
+	}
+	static constraints = {
+       
     }
+	String toString() {
+		""+user+"->"+role
+	}
 }

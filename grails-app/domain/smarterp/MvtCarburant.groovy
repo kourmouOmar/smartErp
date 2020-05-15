@@ -7,6 +7,7 @@ class MvtCarburant {
     int indexK
     String observation 
     Vehicule vehicule
+    TypeCarburant typeCarburant 
 	static belongsTo = [Vehicule]
 
     static mapping = {
@@ -20,6 +21,7 @@ class MvtCarburant {
         numBon nullable:true
         observation nullable:true
         vehicule nullable:true
+        typeCarburant nullable:true
     }
     
     String toString () {
