@@ -13,7 +13,7 @@ class User {
     boolean compteExpired
     
     
-    static hasMany = [roles: Role]
+    static hasMany = [roles: UserRole]
     static mapping = {
 		sort nom: "asc"
 	}
