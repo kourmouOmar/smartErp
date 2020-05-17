@@ -28,6 +28,17 @@
             <g:form resource="${this.user}" method="POST">
                 <fieldset class="form">
                     <f:all bean="user"/>
+                    <table>
+                        <tr>
+                        <g:each var="role" in="${smarterp.Role.findAll()}" status="i">
+                            <td style="width:100Px">
+                            <g:checkBox name="_role_${role.id}" /> 
+                            <label for="_role_${role.id}" title="${role.description}">${role}</label>
+                            </td>
+                            <g:if test="${(i+1)%4 == 0}"></tr><tr></g:if>
+                        </g:each>
+                        </tr>
+                    </table>
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

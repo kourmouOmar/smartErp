@@ -6,7 +6,7 @@ import static org.springframework.http.HttpStatus.*
 class UserController {
 
     UserService userService
-
+    UserRoleService userRoleService
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -34,6 +34,15 @@ class UserController {
             respond user.errors, view:'create'
             return
         }
+
+        //save UserRole
+        for (def p: params) {
+			if (p.key.startsWith('_role_') && p.key.substring(6).isNumber()){
+				Role role = Role.get(new Integer(p.key.substring(6)))
+				UserRole ur = new UserRole(user: user, role: role)
+                userRoleService.save(ur)
+			}
+		}
 
         request.withFormat {
             form multipartForm {
