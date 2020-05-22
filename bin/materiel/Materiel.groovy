@@ -7,10 +7,10 @@ class Materiel {
     TypeMateriel typeMateriel
 
     static belongsTo = [TypeMateriel]
-    
+
     static mapping = {
 		id generator: "increment"
-		sort type: "asc"
+		
 		version false
 	}
     static constraints = {

@@ -11,7 +11,7 @@ class Fournisseur {
     static belongsTo = [Entretien]
     static mapping = {
 		id generator: "increment"
-		sort type: "asc"
+		
 		version false
 	}
     static constraints = {

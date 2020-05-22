@@ -13,7 +13,14 @@ class MaterielController {
         params.max = Math.min(max ?: 10, 100)
         respond materielService.list(params), model:[materielCount: materielService.count()]
     }
+    // def index() {
+    //     redirect(action: "list", params: params)
+    // }
 
+    // def list(Integer max) {
+    //     params.max = Math.min(max ?: 10, 100)
+    //     [materielInstanceList: Materiel.findAll(), materielInstanceTotal: Materiel.count()]
+    // }
     def show(Long id) {
         respond materielService.get(id)
     }
