@@ -8,7 +8,7 @@ class Reparation {
 
     static mapping = {
 		id generator: "increment"
-		sort type: "asc"
+		
 		version false
 	}
     
