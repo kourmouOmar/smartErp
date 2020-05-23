@@ -5,8 +5,9 @@ class Materiel {
     String num
     String description
     TypeMateriel typeMateriel
+    FournisseurMateriel fournisseurMateriel
 
-    static belongsTo = [TypeMateriel]
+    static belongsTo = [TypeMateriel,FournisseurMateriel]
 
     static mapping = {
 		id generator: "increment"
@@ -17,6 +18,7 @@ class Materiel {
         numSerie nullable:true
         num nullable:true
         description nullable:true
+        fournisseurMateriel nullable:true
     }
     String toString(){
         numSerie
