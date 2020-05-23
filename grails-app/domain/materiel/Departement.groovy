@@ -4,7 +4,8 @@ class Departement {
     String numDepartement
     String nomDepartemenr
 
-    static HasMany = [materiels:Materiels]
+    static HasMany = [materiels:Materiel]
+
     static mapping = {
 		id generator: "increment"
 		version false

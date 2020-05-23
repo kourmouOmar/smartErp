@@ -4,7 +4,8 @@ class TypeMateriel {
     String numTypeMateriel
     String libelle
 
-    static hasMany = [materiels:Materiel]
+    static HasMany = [materiels:Materiel]
+
       
     static mapping = {
 		id generator: "increment"
